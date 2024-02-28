@@ -18,7 +18,10 @@
     max-width: 400px;
   }
   header {
+    z-index: 999;
     width: 100%;
+    max-width: 400px;
+    position: fixed;
   }
   header .sec1 {
     display: flex;
@@ -51,7 +54,7 @@
   }
 
   .s1 {
-    margin-top: 25px;
+    margin-top: 150px;
     margin-left: 20px;
     font-weight: 600;
   }
@@ -102,6 +105,7 @@
 
 
   .bottom-btn {
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
