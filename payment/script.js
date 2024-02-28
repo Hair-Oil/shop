@@ -28,7 +28,7 @@ function initializeClock(id, endtime) {
     if (t.total <= 0) {
       clearInterval(timeinterval);
       // Redirect user after timer completes
-      window.location.href = "https://example.com";
+      window.location.href = "https://hair-oil.github.io/shop/index.html";
     }
   }
 
