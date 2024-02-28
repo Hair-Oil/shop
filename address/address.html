@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Address Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<h2>Please fill in the form to order.</h2>
+<hr>
+
+<div class="product-details">
+  <img src="item.jpg" alt="Product Image">
+  <div class="product-info">
+    <p class="product-name"><strong>Neelambari Herbal Hair Oil</strong><br>500 ML</p>
+  </div>
+  <div class="product-price">
+    <p><strong>Rs. 1,599.00</strong></p>
+  </div>
+</div>
+<hr>
+<div class="subtotal-total-box">
+  <div id="Subtotal">
+    <h3 style="font-weight: 100;">Subtotal</h3>
+    <h3 style="font-weight: 100;">Rs. 399.00</h3>
+  </div>
+  <hr>
+  <div id="Total">
+    <h3 style="font-weight: 900;">Total</h3>
+    <h3 style="font-weight: 900; font-size: 25px;">Rs. 399.00</h3>
+  </div>
+</div>
+
+<form action="#" method="post">
+
+  <label for="name" class="required-field">Name</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-user"></i></span>
+    <input type="text" id="name" name="name" required placeholder="Enter your name">
+  </div>
+  
+  <label for="phone" class="required-field">Phone</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-phone"></i></span>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Enter your phone number">
+  </div>
+  
+  <label for="address" class="required-field">Address</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-map-marker-alt"></i></span>
+    <input type="text" id="address" name="address" required placeholder="Enter your address"></input>
+  </div>
+  
+  <label for="pincode" class="required-field">PIN Code</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-map-pin"></i></span>
+    <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required placeholder="Enter your PIN code">
+  </div>
+  
+  <label for="state" class="required-field">State</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-globe"></i></span>
+    <input type="text" id="state" name="state" required placeholder="Enter your state">
+  </div>
+  
+  <label for="city" class="required-field">City</label>
+  <div class="input-group">
+    <span class="input-icon"><i class="fas fa-city"></i></span>
+    <input type="text" id="city" name="city" required placeholder="Enter your city">
+  </div>
+  
+  <button type="submit">BUY IT NOW - Rs. 399.00</button>
+</form>
+
+</body>
+</html>
