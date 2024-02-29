@@ -7,6 +7,13 @@
   body {
     padding: 20px;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 400px;
   }
 
   h2 {
