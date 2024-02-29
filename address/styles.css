@@ -109,13 +109,16 @@ button[type="submit"] {
 }
 
 
-        /* Centered Loading Spinner */
-        .loader {
+         /* Centered Loading Spinner */
+         .loader {
+          display: none;
           position: fixed;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 9999;
+          background-color: #000000;
+          padding: 20px;
       }
 
       .lds-ring {
@@ -132,10 +135,10 @@ button[type="submit"] {
           width: 64px;
           height: 64px;
           margin: 8px;
-          border: 8px solid #fff;
+          border: 8px solid #ffffff;
           border-radius: 50%;
           animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          border-color: #fff transparent transparent transparent;
+          border-color: #ffffff transparent transparent transparent;
       }
 
       .lds-ring div:nth-child(1) {

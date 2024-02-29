@@ -8,6 +8,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="loader">
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
 <div class="main">
 <h2>Please fill in the form to order.</h2>
 <hr>
@@ -71,17 +79,18 @@
     <span class="input-icon"><i class="fas fa-city"></i></span>
     <input type="text" id="city" name="city" required placeholder="Enter your city">
   </div>
-  
-  <button type="submit">BUY IT NOW - Rs. 399.00</button>
-</form>
+
+  <div class="loader">
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </div>
-<div class="loader" id="loader" style="display: none;">
-  <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-  </div>
+  
+<button type="submit">BUY IT NOW - Rs. 399.00</button>
+</form>
 </div>
 
 <script src="script.js"></script>
