@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<form id="orderForm" action="#" method="post">
+<form id="orderForm" action="#" method="post" onsubmit="return submitForm();">
 
   <label for="name" class="required-field">Name</label>
   <div class="input-group">
@@ -72,71 +72,19 @@
     <input type="text" id="city" name="city" required placeholder="Enter your city">
   </div>
   
-  <!-- Add onclick attribute to call submitForm() -->
-  <button type="submit" onclick="submitForm()">BUY IT NOW - Rs. 399.00</button>
+  <button type="submit">BUY IT NOW - Rs. 399.00</button>
 </form>
 </div>
+<div class="loader" id="loader" style="display: none;">
+  <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+</div>
 
-<!-- JavaScript code -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function sendToTelegram(address) {
-    const botToken = '6752961822:AAHzDMtUeGxHpoRWenQhZJLfCbDOFJvk9Kg'; // Replace with your bot token
-    const chatId = '6324305321'; // Replace with your chat ID
-    const message = `New order received:\n\nName: ${address.name}\nPhone: ${address.phone}\nAddress: ${address.address}\nPIN Code: ${address.pincode}\nState: ${address.state}\nCity: ${address.city}`;
-    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-    fetch(telegramUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to send message to Telegram bot');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Message sent successfully:', data);
-    })
-    .catch(error => {
-      console.error('Error sending message to Telegram bot:', error);
-    });
-  }
-
-  function saveAddressToLocalStorage(address) {
-    localStorage.setItem("address", JSON.stringify(address));
-  }
-
-  function validateForm() {
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let address = document.getElementById("address").value;
-    let pincode = document.getElementById("pincode").value;
-    let state = document.getElementById("state").value;
-    let city = document.getElementById("city").value;
-
-    if (name.trim() === "" || phone.trim() === "" || address.trim() === "" || pincode.trim() === "" || state.trim() === "" || city.trim() === "") {
-      alert("Please fill in all fields.");
-      return false;
-    }
-
-    return true;
-  }
-
-  // Define the submitForm function
-  function submitForm() {
-    document.getElementById("orderForm").submit();
-  }
-});
-</script>
-<!-- End of JavaScript code -->
+<script src="script.js"></script>
 
 </body>
 </html>

