@@ -121,6 +121,52 @@
     width: 15px;
   }
 
+  /* apply jd s*/
+
+  .container-qr.clicked {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #e6e6e6;
+    margin: 20px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .container-qr.clicked .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    transition: max-width 1s ease;
+  }
+  
+  .container-qr.clicked .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.5em;
+  }
+
+  .container-qr.clicked .pay-app-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px 0;
+    gap: 10px;
+  }
+
+  .container-qr.clicked .pay-app-logo img {
+    width: 30px;
+  }
+
+
+  /* apply jd e*/
+
+
 
 
 

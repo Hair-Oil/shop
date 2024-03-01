@@ -23,7 +23,17 @@
       </div>
     </header>
     <div class="s1">Pay With UPI QR</div>
-    <div class="container-qr">
+   
+    <script>
+      function toggleCSS() {
+        var elements = document.getElementsByClassName("container-qr");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.toggle("clicked");
+        }
+      }
+    </script>
+    
+    <div class="container-qr" onclick="toggleCSS()">
         <div class="left">
           <img src="img/pay40.png" alt="Image">
         </div>
@@ -141,7 +151,9 @@
       Pay Now (UPI)
           </button></a>
 </div>
-    <script src="script.js"></script> 
+    
+
+<script src="script.js"></script> 
 </div> 
   </body>
 </html>
