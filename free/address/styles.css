@@ -1,0 +1,163 @@
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+  .subtotal-total-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px 0;
+  }
+  #Subtotal, #Total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+  .product-details {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .product-details img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  .product-info {
+    flex-grow: 1;
+  }
+  .product-name {
+    margin: 0;
+  }
+  .product-price {
+    margin-left: 5px;
+  }
+  .required-field {
+    font-weight: 900;
+  }
+  .required-field::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+  }
+  input[type="text"],
+  input[type="tel"] {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+  }
+  .input-group {
+    border: 2px solid #c0c0c0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    margin: 10px 0 20px 0;
+  }
+  .input-icon {
+  width: 40px;
+  height: 100%;
+  color: black;
+  background-color: #e1e1e1;
+  border-right: 2px solid #c0c0c0;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.input-icon i {
+  line-height: normal;
+}
+
+.required-field {
+    font-weight: 900;
+  }
+  .required-field::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+  }
+button[type="submit"] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+
+         /* Centered Loading Spinner */
+         .loader {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 9999;
+          background-color: #000000;
+          padding: 20px;
+      }
+
+      .lds-ring {
+          display: inline-block;
+          position: relative;
+          width: 80px;
+          height: 80px;
+      }
+
+      .lds-ring div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border: 8px solid #ffffff;
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #ffffff transparent transparent transparent;
+      }
+
+      .lds-ring div:nth-child(1) {
+          animation-delay: -0.45s;
+      }
+
+      .lds-ring div:nth-child(2) {
+          animation-delay: -0.3s;
+      }
+
+      .lds-ring div:nth-child(3) {
+          animation-delay: -0.15s;
+      }
+
+      @keyframes lds-ring {
+          0% {
+              transform: rotate(0deg);
+          }
+          100% {
+              transform: rotate(360deg);
+          }
+      }
