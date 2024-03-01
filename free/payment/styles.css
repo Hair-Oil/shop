@@ -234,10 +234,14 @@
   }
 
   .warning {
-    background-color: #ffc107; /* Yellow background color */
-    color: #333; /* Text color */
-    padding: 10px; /* Padding around the warning message */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #e3e3e3;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 5px;
   }
   
 
