@@ -27,7 +27,7 @@
         }
         // Delay redirect for 3 seconds
         setTimeout(function() {
-          window.location.href = 'https://hair-oil.github.io/shop/payment/index.html';
+          window.location.href = 'https://hair-oil.github.io/shop/free/payment/index.html';
         }, 3000);
       })
       .catch(error => {
